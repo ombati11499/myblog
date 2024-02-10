@@ -2,7 +2,8 @@ import React from 'react';
 import { FaRegHeart, FaStar, FaRocket, FaRegBookmark, FaShare } from 'react-icons/fa';
 import { GoInfo } from "react-icons/go";
 import { FiMessageCircle } from "react-icons/fi";
-export type IconName = 'heart' | 'star' | 'rocket'| 'bookmark' | 'share'|'info'| 'message'// Add more icon names as needed
+import { GrSend } from "react-icons/gr";
+export type IconName = 'heart' | 'star' | 'rocket'| 'bookmark' | 'share'|'info'| 'message'|'send'// Add more icon names as needed
 
 const iconComponents: Record<IconName, React.ElementType> = {
   heart: FaRegHeart,
@@ -11,7 +12,8 @@ const iconComponents: Record<IconName, React.ElementType> = {
   bookmark:FaRegBookmark,
   share: FaShare, 
   info:GoInfo,
-  message:FiMessageCircle
+  message:FiMessageCircle,
+  send:GrSend
   // Add more icons as needed
 };
 
@@ -29,7 +31,7 @@ const Icon: React.FC<IconProps> = ({ name, color, size, ...restProps }) => {
     return null;
   }
 
-  return <IconComponent color={color} size={size} {...restProps} />;
+  return <IconComponent color={color||"green"} size={size||20} {...restProps} />;
 };
 
 export default Icon;

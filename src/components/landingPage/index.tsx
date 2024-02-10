@@ -9,7 +9,12 @@ interface BtnProps {
   icon: string;
   text?: string;
 }
+export const profPic = (picUrl: string, style: string) => {
+  return <img id={style} src={picUrl} alt="profPic" />;
+};
 const authorName = "ombatiDev";
+const authorPic =
+  "https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333";
 
 const Landing: React.FC<Props> = ({}: Props) => {
   const pageBtns: BtnProps[] = [
@@ -24,7 +29,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
     {
       btnName: "dm",
       text: "Get in touch",
-      icon: "",
+      icon: "send",
     },
     {
       btnName: "Feedback",
@@ -39,6 +44,15 @@ const Landing: React.FC<Props> = ({}: Props) => {
       icon: "info",
     },
   ];
+  //functions
+  const dmButton = (text: string, icon: string) => {
+    return (
+      <button id="dm">
+        <Icon name={icon as IconName} color="#4daa57" size={13} />
+        <p>{text}</p>
+      </button>
+    );
+  };
 
   return (
     <div id="container">
@@ -46,13 +60,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
         <h1>IPS Capital – Conceptual Illustrations</h1>
         <div className="header_container">
           <div id="author">
-            <div>
-              <img
-                className="profPic"
-                src="https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333"
-                alt="profPic"
-              />
-            </div>
+            <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
             <div id="author_d">
               <span id="name">{authorName}</span>
               <p id="available">Available for work</p>
@@ -64,13 +72,11 @@ const Landing: React.FC<Props> = ({}: Props) => {
           <div id="buttons">
             {pageBtns.map(({ btnName, icon, text }: BtnProps, i) =>
               btnName === "Like" || btnName === "Save" ? (
-                <div id="rounded_icon" key={i}>
+                <button title="socials" id="rounded_icon" key={i}>
                   <Icon name={icon as IconName} color="black" size={13} />
-                </div>
+                </button>
               ) : btnName === "dm" ? (
-                <div id="dm">
-                  <p>{text}</p>
-                </div>
+                dmButton(text as string, icon)
               ) : null
             )}
           </div>
@@ -78,18 +84,21 @@ const Landing: React.FC<Props> = ({}: Props) => {
       </header>
       <div id="main_page">
         <div id="imgBtns">
-          <img
-            id="page_pic"
-            src="https://cdn.dribbble.com/userupload/12885140/file/original-0df9186d452ff51ff9aa7be61af22ea8.png?resize=2048x1024"
-            alt="page image"
-          />
+          <button>
+            <img
+              id="page_pic"
+              src="https://cdn.dribbble.com/userupload/12885140/file/original-0df9186d452ff51ff9aa7be61af22ea8.png?resize=2048x1024"
+              alt="page image"
+            />
+          </button>
+
           {pageBtns.map(({ btnName, icon, text }: BtnProps, i) =>
             btnName === "Feedback" ||
             btnName === "Share" ||
             btnName === "Show details" ? (
-              <div id="side_icon" key={i}>
+              <button title="sidecons" id="side_icon" key={i}>
                 <Icon name={icon as IconName} color="black" size={13} />
-              </div>
+              </button>
             ) : null
           )}
         </div>
@@ -107,11 +116,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
       </div>
       <div id="footer">
         <div id="line"></div>
-        <img
-          id="logo"
-          alt="logo"
-          src="https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333"
-        />
+        <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
         <div id="line"></div>
       </div>
       <div id="author_links">
@@ -120,17 +125,17 @@ const Landing: React.FC<Props> = ({}: Props) => {
           Software Engineer Consultant (All articles are free)
         </p>
         {pageBtns.map(({ text, icon, btnName }: BtnProps) =>
-          btnName === "dm" ? <div id="dm">{text}</div> : null
+          btnName === "dm" ? dmButton(text as string, icon) : null
         )}
       </div>
       <div id="page_line"></div>
       <p>More from {authorName}</p>
 
-      <MoreBlogs authorName={authorName} />
+      <MoreBlogs authorName={authorName} authorPic={authorPic} />
       <div id="page_line"></div>
 
       <div id="recommendations">
-        <button>See more recommendations</button>{" "}
+        <button id="recommend">See more recommendations</button>{" "}
       </div>
 
       <footer>

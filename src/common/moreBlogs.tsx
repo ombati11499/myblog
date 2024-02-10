@@ -1,7 +1,9 @@
 import React, { FC } from "react";
 import "./styles.css";
+import { profPic } from "../components/landingPage";
 interface Props {
-    authorName:string
+  authorName: string;
+  authorPic: string;
 }
 interface BlogProps {
   author: { pic: string; names: string };
@@ -12,14 +14,14 @@ interface BlogProps {
   datePublished: Date;
 }
 
-const MoreBlogs: FC<Props> = ({authorName}: Props) => {
+const MoreBlogs: FC<Props> = ({ authorName, authorPic }: Props) => {
   const Blogs: BlogProps[] = [
     {
       image:
         "https://miro.medium.com/v2/resize:fit:1358/0*e68bMwPYgfSN0sm2.png",
       author: {
         names: authorName,
-        pic: "https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333",
+        pic: authorPic,
       },
       readTime: "5 min read",
       title: "Why you should use AVIF over JPEG, WebP, PNG and GIF In 2024",
@@ -32,7 +34,7 @@ const MoreBlogs: FC<Props> = ({authorName}: Props) => {
         "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fDlq6uAM-5qwMDB8zFzw8g.png",
       author: {
         names: authorName,
-        pic: "https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333",
+        pic: authorPic,
       },
       readTime: "5 min read",
       title: "Tailwind vs Modern CSS",
@@ -45,7 +47,7 @@ const MoreBlogs: FC<Props> = ({authorName}: Props) => {
         "https://miro.medium.com/v2/resize:fit:1358/1*Bf_y0eh_vM86hTxYvTKm-g.jpeg",
       author: {
         names: authorName,
-        pic: "https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333",
+        pic: authorPic,
       },
       readTime: "5 min read",
       title: "Why you should use AVIF over JPEG, WebP, PNG and GIF In 2024",
@@ -58,7 +60,7 @@ const MoreBlogs: FC<Props> = ({authorName}: Props) => {
         "https://cdn.dribbble.com/userupload/11922537/file/original-7dd497aff325a6895478f52f4b28c738.png?resize=800x600&vertical=center",
       author: {
         names: authorName,
-        pic: "https://cdn.dribbble.com/users/77628/avatars/normal/10a3ccbe1329752e54b6ae9f35b50a3a.jpg?1600769333",
+        pic: authorPic,
       },
       readTime: "5 min read",
       title: "Javascript Interview Question: Invoke a function without...",
@@ -70,7 +72,6 @@ const MoreBlogs: FC<Props> = ({authorName}: Props) => {
   return (
     <div id="container">
       <div id="grid_container">
-        
         {Blogs.map(
           ({
             author,
@@ -90,20 +91,27 @@ const MoreBlogs: FC<Props> = ({authorName}: Props) => {
             );
             return (
               <div id="grid">
-                <img alt="blog_image" id="blog_image" src={image} />
+                <button id="blog_image">
+                  <img alt="blog_image" id="blog_image" src={image} />
+                </button>
                 <div id="author">
-                  <img alt="profPic" id="profPic" src={author.pic} />
-                  <span id="names">{author.names}</span>
+                  <button id="pic">
+                    {profPic(author.pic, "profPic")}
+                    <span id="names">{author.names}</span> 
+                  </button>
                 </div>
-                <div id="text">
+                {/* <div id="text"> */}
+                <button id="text">
                   <h3>{title}</h3>
                   <p>{abstract}</p>
-                </div>
-                <div id="time_stats">
-                  <p>{readTime}</p>
-                  <p id="date">{formattedDate}</p>
-                </div>
+                  <div id="time_stats">
+                    <p>
+                      {readTime} &#183; <span id="date">{formattedDate}</span>
+                    </p>
+                  </div>
+                </button>
               </div>
+              // </div>
             );
           }
         )}
