@@ -9,7 +9,7 @@ interface BtnProps {
   btnName: string;
   icon: string;
   text?: string;
-  count?:number|null;
+  count?: number | null;
 }
 export const profPic = (picUrl: string, style: string) => {
   return <img id={style} src={picUrl} alt="profPic" />;
@@ -37,7 +37,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
     {
       btnName: "Feedback",
       icon: "message",
-      count:4,
+      count: 4,
     },
     {
       btnName: "Share",
@@ -62,9 +62,9 @@ const Landing: React.FC<Props> = ({}: Props) => {
     <div id="container">
       <div id="search_container">
         <button title="home">
-        <Icon name="home"/>
+          <Icon name="home" />
         </button>
-        <input placeholder="Search" type="text"/>
+        <input placeholder="Search" type="text" />
       </div>
       <header>
         <h1>IPS Capital – Conceptual Illustrations</h1>
@@ -107,52 +107,58 @@ const Landing: React.FC<Props> = ({}: Props) => {
           </button>
         </div>
         <div id="abstract">
-          <p >
-          <span>W</span>ith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+          <p>
+            <span>W</span>ith over 30 years of brand legacy, Luminate was ready
+            to boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith 
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith
           </p>
         </div>
         <div id="content">
           <p>
-          With over 30 years of brand legacy, Luminate was ready to boldly
+            With over 30 years of brand legacy, Luminate was ready to boldly
             rebrand. We set out in search of “what data looks like.” A true
             large-scale data visualization is powerful: tons of information made
             easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith over 30 years of brand legacy, Luminate was ready to
+            boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith over 30 years of brand legacy, Luminate was ready to
+            boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith over 30 years of brand legacy, Luminate was ready to
+            boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith over 30 years of brand legacy, Luminate was ready to
+            boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
-            hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedInWith over 30 years of brand legacy, Luminate was ready to boldly
-            rebrand. We set out in search of “what data looks like.” A true
-            large-scale data visualization is powerful: tons of information made
-            easily digestible, visually. 👉 See the full case study here:
+            hello@focuslab.agency Our Website / Subscribe / Instagram /
+            LinkedInWith over 30 years of brand legacy, Luminate was ready to
+            boldly rebrand. We set out in search of “what data looks like.” A
+            true large-scale data visualization is powerful: tons of information
+            made easily digestible, visually. 👉 See the full case study here:
             https://focuslab.agency/work/luminate --- Looking for a brand
             agency? We would love to hear from you. Email us:
             hello@focuslab.agency Our Website / Subscribe / Instagram / LinkedIn
@@ -170,19 +176,19 @@ const Landing: React.FC<Props> = ({}: Props) => {
           Software Engineer Consultant (All articles are free)
         </p>
         <div id="contacts">
-        {pageBtns.map(({ text, icon, btnName,count }: BtnProps, i) =>
-         btnName === "Feedback" ||
-         btnName === "Share" ||
-         btnName === "Show details" ? (
-           <button title="" id="side_icon" name={btnName} key={i}>
-             <span id="count">{count}</span>
-             <Icon name={icon as IconName} color="black" size={13} />
-           </button>
-         ) :
-          btnName === "dm" ? dmButton(text as string, icon) : null
-        )}
+          {pageBtns.map(({ text, icon, btnName, count }: BtnProps, i) =>
+            btnName === "Feedback" ||
+            btnName === "Share" ||
+            btnName === "Show details" ? (
+              <button title="" id="side_icon" name={btnName} key={i}>
+                <span id="count">{count}</span>
+                <Icon name={icon as IconName} color="black" size={13} />
+              </button>
+            ) : btnName === "dm" ? (
+              dmButton(text as string, icon)
+            ) : null
+          )}
         </div>
-       
       </div>
       <div id="page_line"></div>
       <p>More from {authorName}</p>
@@ -193,8 +199,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
       <div id="recommendations">
         <button id="recommend">See more recommendations</button>{" "}
       </div>
-
-      <Footer/>
+      <Footer />
     </div>
   );
 };

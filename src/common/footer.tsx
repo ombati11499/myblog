@@ -1,15 +1,21 @@
 import React from 'react'
 
 const Footer=()=> {
+  const footerBtns=[
+    {name:"Help"},
+    {name:"Status"},
+    {name:"About"},
+    {name:"Careers"},
+    {name:"Blog"},
+    {name:"Privacy"},
+    {name:"Terms"},
+  ]
   return (
     <footer>
-    <button>Help</button>
-    <button>Status</button>
-    <button>About</button>
-    <button>Careers</button>
-    <button>Blog</button>
-    <button>Privacy</button>
-    <button>Terms</button>
+      {footerBtns.map((btn:any, i)=><button key={i}>
+        {btn.name}
+      </button>)}
+    
   </footer>
   )
 }
