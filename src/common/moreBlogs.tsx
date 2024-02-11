@@ -50,7 +50,7 @@ const MoreBlogs: FC<Props> = ({ authorName, authorPic }: Props) => {
         pic: authorPic,
       },
       readTime: "5 min read",
-      title: "Why you should use AVIF over JPEG, WebP, PNG and GIF In 2024",
+      title: "Why you should use AVIF overr JPEG, WebP, PNG and GIF In 2024",
       datePublished: new Date("2024-02-08"),
       abstract:
         "Generally, AVIF compression is computationally more intensive than older image formats like JPEG, but it typically achieves superior compression efficiency.",
