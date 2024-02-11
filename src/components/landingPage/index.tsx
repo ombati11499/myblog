@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import "../landingPage/styles.css";
 import Icon, { IconName } from "../../common/icons";
 import MoreBlogs from "../../common/moreBlogs";
+import Footer from "../../common/footer";
 
 interface Props {}
 interface BtnProps {
@@ -193,15 +194,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
         <button id="recommend">See more recommendations</button>{" "}
       </div>
 
-      <footer>
-        <a>Help</a>
-        <a>Status</a>
-        <a>About</a>
-        <a>Careers</a>
-        <a>Blog</a>
-        <a>Privacy</a>
-        <a>Terms</a>
-      </footer>
+      <Footer/>
     </div>
   );
 };

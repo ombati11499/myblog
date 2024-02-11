@@ -99,3 +99,22 @@
 #date {
   padding-left: 5px;
 }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  align-items: center;
+  background-color: rgba(100, 100, 100, 0.5);
+  height: 80px;
+  width: 100%;
+  border-top: 1px rgba(100, 100, 100, 0.5) solid;
+  margin-top: 50px;
+}
+footer button {
+  padding: 5px 15px;
+  margin: 0px;
+  font-size: 13px;
+  color: #6b6b6b;
+  line-height: 20px;
+  font-weight: 400;
+}
