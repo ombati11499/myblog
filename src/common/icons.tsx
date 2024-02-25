@@ -3,7 +3,8 @@ import { FaRegHeart, FaStar, FaRocket, FaRegBookmark, FaShare, FaHome } from 're
 import { GoInfo } from "react-icons/go";
 import { FiMessageCircle } from "react-icons/fi";
 import { GrSend } from "react-icons/gr";
-export type IconName = 'heart' | 'star' | 'rocket'| 'bookmark' | 'share'|'info'| 'message'|'send'|'home'// Add more icon names as needed
+import { HiOutlineSearch } from "react-icons/hi";
+export type IconName = 'heart' | 'star' | 'rocket'| 'bookmark' | 'share'|'info'| 'message'|'send'|'home'|'search'// Add more icon names as needed
 
 const iconComponents: Record<IconName, React.ElementType> = {
   heart: FaRegHeart,
@@ -14,7 +15,8 @@ const iconComponents: Record<IconName, React.ElementType> = {
   info:GoInfo,
   message:FiMessageCircle,
   send:GrSend,
-  home:FaHome
+  home:FaHome,
+  search:HiOutlineSearch,
   // Add more icons as needed
 };
 

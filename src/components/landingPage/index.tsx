@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "../landingPage/styles.css";
 import Icon, { IconName } from "../../common/icons";
 import MoreBlogs from "../../common/moreBlogs";
@@ -57,16 +57,27 @@ const Landing: React.FC<Props> = ({}: Props) => {
       </button>
     );
   };
-
+  const [state, setState] = React.useState({
+    isFixed: false,
+  })
+const {isFixed} = state;
+const handleScroll = () => {
+  setState({isFixed: window.scrollY > 70})
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}
+useEffect(handleScroll, []);
   return (
     <div id="container">
       <div id="search_container">
-        <button title="home">
-          <Icon name="home" />
-        </button>
-        <input placeholder="Search" type="text" />
+        <div id="search">
+          <button title="home">
+            <Icon name="search" />
+          </button>
+          <input placeholder="Search" type="text" />
+        </div>
       </div>
-      <header>
+      <header className={isFixed? "header_fixed" : "header"}>
         <h1>IPS Capital – Conceptual Illustrations</h1>
         <div className="header_container">
           <div id="author">
@@ -181,7 +192,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
             btnName === "Share" ||
             btnName === "Show details" ? (
               <button title="" id="side_icon" name={btnName} key={i}>
-                <span id="count">{count}</span>
+                {/* <span id="count">{count}</span> */}
                 <Icon name={icon as IconName} color="black" size={13} />
               </button>
             ) : btnName === "dm" ? (
