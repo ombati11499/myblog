@@ -68,6 +68,11 @@ const Landing: React.FC<Props> = ({}: Props) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   };
+  const profLink = () => (
+    <Link to="/about">
+      <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
+    </Link>
+  );
   useEffect(handleScroll, []);
   return (
     <div id="container">
@@ -83,10 +88,7 @@ const Landing: React.FC<Props> = ({}: Props) => {
         <h1>IPS Capital – Conceptual Illustrations</h1>
         <div className="header_container">
           <div id="author">
-           <Link to="/about">
-           <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
-           
-           </Link> 
+            {profLink()}
             <div id="author_d">
               <span id="name">{authorName}</span>
               <p id="available">
@@ -183,7 +185,8 @@ const Landing: React.FC<Props> = ({}: Props) => {
       </div>
       <div id="author_info">
         <div id="line"></div>
-        <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
+        {profLink()}
+        {/* <button id="main_pic">{profPic(authorPic, "main_pic")}</button> */}
         <div id="line"></div>
       </div>
       <div id="author_links">
