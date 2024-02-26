@@ -3,6 +3,8 @@ import "../landingPage/styles.css";
 import Icon, { IconName } from "../../common/icons";
 import MoreBlogs from "../../common/moreBlogs";
 import Footer from "../../common/footer";
+import { Link, Route } from "react-router-dom";
+import About from "../aboutPage";
 
 interface Props {}
 interface BtnProps {
@@ -59,14 +61,14 @@ const Landing: React.FC<Props> = ({}: Props) => {
   };
   const [state, setState] = React.useState({
     isFixed: false,
-  })
-const {isFixed} = state;
-const handleScroll = () => {
-  setState({isFixed: window.scrollY > 70})
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}
-useEffect(handleScroll, []);
+  });
+  const { isFixed } = state;
+  const handleScroll = () => {
+    setState({ isFixed: window.scrollY > 70 });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  };
+  useEffect(handleScroll, []);
   return (
     <div id="container">
       <div id="search_container">
@@ -77,11 +79,14 @@ useEffect(handleScroll, []);
           <input placeholder="Search" type="text" />
         </div>
       </div>
-      <header className={isFixed? "header_fixed" : "header"}>
+      <header className={isFixed ? "header_fixed" : "header"}>
         <h1>IPS Capital – Conceptual Illustrations</h1>
         <div className="header_container">
           <div id="author">
-            <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
+           <Link to="/about">
+           <button id="main_pic">{profPic(authorPic, "main_pic")}</button>
+           
+           </Link> 
             <div id="author_d">
               <span id="name">{authorName}</span>
               <p id="available">

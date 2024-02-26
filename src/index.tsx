@@ -5,6 +5,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Landing from './components/landingPage';
 import NotFoundPage from './components/notFoundPage';
+import About from './components/aboutPage';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
      path:'/myblog',
      element: <Landing />,
+  },
+  {
+    path:'/about',
+    element: <About />,
   }
 ]);
 const root = ReactDOM.createRoot(
